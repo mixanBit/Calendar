@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  padding-bottom: 100px;
+}
+
+a, button, input {
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+.heading {
+  width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 8px;
+  margin: auto;
+  padding: 10px;
+}
+.heading button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-top: 4px;
+}
+.heading button:nth-child(1) {
+  background-image: url(/images/prew.png);
+}
+.heading button:nth-child(3) {
+  background-image: url(/images/next.png);
+}
+
+.calendar {
+  width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.month {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+.month tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-gap: 20px;
+  margin: auto;
+  margin-top: 20px;
+}
+.month tr:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 0;
+}
+.month tr:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.month td {
+  border-radius: 8px;
+  cursor: pointer;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+.month td:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.weekdays {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.outputdays {
+  background-color: #6f081b;
+}
+
+.day {
+  border-radius: 1px;
+  width: 100%;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 10px;
+  margin: auto;
+  margin-top: 0;
+}
+.day .date {
+  font-size: 18px;
+  color: white;
+}
+
+.today {
+  background-color: #1a73e8;
+  -webkit-box-shadow: 0 0 5px 4px #1a73e8 !important;
+          box-shadow: 0 0 5px 4px #1a73e8 !important;
+}

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    padding-bottom: 100px;
+}
+
+@mixin br {
+    // border: 1px solid !important;
+}
+
+a, button, input{
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+.heading{
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    grid-gap: 8px;
+    margin: auto;
+    padding: 10px;
+        button{
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0,0,0,0);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            margin-top: 4px;
+                &:nth-child(1){
+                    background-image: url(/images/prew.png);
+                }
+                &:nth-child(3){
+                    background-image: url(/images/next.png);
+                }
+        }
+}
+
+.calendar{
+    @include br;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.month{
+    @include br;
+    display: flex;
+    margin: auto;
+        tr{
+            display: flex;
+            justify-content: center;
+            grid-gap: 20px;
+            margin: auto;
+            margin-top: 20px;
+                &:first-child{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: 0;
+                }
+                &:last-child{
+                    display: flex;
+                    justify-content: flex-start;
+                }
+        }
+        td{
+            border-radius: 8px;
+            cursor: pointer;
+            width: 110px;
+            height: 110px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,.7);
+            transition: .3s linear;
+                &:hover{
+                    background-color: rgba(0,0,0,.1);
+                }
+        }
+}
+
+.weekdays{
+    background-color: rgba(0,0,0,.3);
+}
+
+.outputdays{
+    background-color:#6f081b;
+}
+
+.day{
+    border-radius: 1px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10px;
+    margin: auto;
+    margin-top: 0;
+    .date{
+        font-size: 18px;
+        color: white;
+    }
+}
+
+.today{
+    // border: 1px solid #1a73e8;
+    background-color: #1a73e8;
+    box-shadow: 0 0 5px 4px #1a73e8!important;
+}
