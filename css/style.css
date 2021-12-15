@@ -18,7 +18,7 @@ a, button, input {
 }
 
 .heading {
-  width: 1000px;
+  width: 1070px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,10 +40,10 @@ a, button, input {
   margin-top: 4px;
 }
 .heading button:nth-child(1) {
-  background-image: url(/images/prew.png);
+  background-image: url(../images/prew.png);
 }
 .heading button:nth-child(3) {
-  background-image: url(/images/next.png);
+  background-image: url(../images/next.png);
 }
 
 .calendar {
@@ -171,8 +171,8 @@ a, button, input {
 }
 .modal .modal_overlay {
   border-radius: 8px;
-  width: 400px;
-  height: 300px;
+  width: 80%;
+  height: 80%;
   background-color: white;
   padding: 10px;
 }

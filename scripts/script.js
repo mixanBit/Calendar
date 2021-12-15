@@ -1,27 +1,36 @@
-let modal = document.querySelectorAll('.modal'),
+let modal = document.querySelector('.modal'),
     day   = document.querySelectorAll('.month tr td');
+
+let input = document.querySelector('input'),
+    text  = document.querySelectorAll('.text'),
+    btn   = document.querySelector('.btn');
+
+
 
 for(let i = 0; i < day.length; i++) {
     day[i].addEventListener('click', () => {
-        modal[i].classList.add('modal_active')
+        modal.classList.add('modal_active')
 
-        modal[i].addEventListener('click', (el) => {
+        modal.addEventListener('click', (el) => {
             if(el.target.classList.contains('modal')) {
-                modal[i].classList.remove('modal_active')
+                modal.classList.remove('modal_active')
             }
+        })
+
+        input.value = text[i].innerText
+        btn.addEventListener('click', () => {
+            text[i].innerHTML = input.value
+            modal.classList.remove('modal_active')
         })
     })
 }
 
 
-let input = document.querySelectorAll('input'),
-    text  = document.querySelectorAll('.text'),
-    btn   = document.querySelectorAll('.btn');
 
-for(let i = 0; i < btn.length; i++){
-    btn[i].addEventListener('click', () => {
-        text[i].innerText = input[i].value
-        modal[i].classList.remove('modal_active')
-    })
-}
+// for(let i = 0; i < btn.length; i++){
+//     btn.addEventListener('click', () => {
+//         text[i].innerText = input.value
+//         modal.classList.remove('modal_active')
+//     })
+// }
 

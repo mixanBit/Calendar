@@ -22,7 +22,7 @@ a, button, input{
 }
 
 .heading{
-    width: 1000px;
+    width: 1070px;
     display: flex;
     align-items: center;
     grid-gap: 8px;
@@ -38,10 +38,10 @@ a, button, input{
             background-size: cover;
             margin-top: 4px;
                 &:nth-child(1){
-                    background-image: url(/images/prew.png);
+                    background-image: url(../images/prew.png);
                 }
                 &:nth-child(3){
-                    background-image: url(/images/next.png);
+                    background-image: url(../images/next.png);
                 }
         }
 }
@@ -89,6 +89,10 @@ a, button, input{
                 &:hover{
                     background-color: rgba(0,0,0,.1);
                 }
+                // .heading{
+                //     font-size: 18px;
+                //     padding: 5px;
+                // }
         }
 }
 
@@ -138,8 +142,8 @@ a, button, input{
     transition: .3s linear;
         .modal_overlay{
             border-radius: 8px;
-            width: 400px;
-            height: 300px;
+            width: 80%;
+            height: 80%;
             background-color: white;
             padding: 10px;
                 input{
