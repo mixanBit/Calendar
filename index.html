@@ -13,192 +13,276 @@
     <script src="scripts/script.js" defer></script>
 </head>
 <body>
-
+<!-- --------------------------(месяц)---------------------------- -->
     <div class="heading">
         <button></button>
-        <h1>December</h1>
+        <h1 class="name_month">December</h1>
         <button></button>
     </div>
 
+<!-- --------------------------(модальное окно)---------------------------- -->
     <div class="modal">
         <div class="modal_overlay">
-            <input class="input" type="text">
-            <button class="btn">send</button>
+            <div class="modal_left">
+                <div class="modal_month">
+                    <h1 class="selected_month">December</h1>
+                </div>
+
+                <div class="modal_day">
+                    <div class="day">
+                        <p class="selected_date"> <p class="selected_week_day">пн</p></p>
+                    </div>
+                    <h2 class="modal_title"></h2>
+                </div>
+            </div>
+
+            <div class="modal_form">
+                <div class="block_input">
+                    <label for="input_head">Title</label>
+                    <input class="input_title" id="input_head" type="text" maxlength="20">
+                </div>
+                <div class="block_input">
+                    <label for="input_text">Note</label>
+                    <textarea class="input_note" name="text" id="input_text" maxlength="400"></textarea>
+                </div>
+                
+                <button class="btn">save</button>
+            </div>
         </div>
     </div>
     
+<!-- --------------------------(календарь)---------------------------- -->
     <main class="calendar">
         <table class="month calendar_december" cellpadding='0' cellspacing='0'>
             <tr>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">1</p>
+                        <p class="date">1 <p class="week_day">ср</p></p>
                     </div>
-                    <h2 class="text">test1</h2>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">2</p>
+                        <p class="date">2 <p class="week_day">чт</p></p>
                     </div>
-                    <h2 class="text">test2</h2>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">3</p>
+                        <p class="date">3 <p class="week_day">пт</p></p>
                     </div>
-                    <h2 class="text">test3</h2>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="outputdays day">
-                        <p class="date">4</p>
+                        <p class="date">4 <p class="week_day">сб</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="outputdays day">
-                        <p class="date">5</p>
+                        <p class="date">5 <p class="week_day">вс</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
             </tr>
 
             <tr>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">6</p>
+                        <p class="date">6 <p class="week_day">пн</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
+                </td>
+                <td>
+                    <div class="weekdays day">
+                        <p class="date">7 <p class="week_day">вт</p></p>
+                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
+                </td>
+                <td>
+                    <div class="weekdays day">
+                        <p class="date">8 <p class="week_day">ср</p></p>
+                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
+                </td>
+                <td>
+                    <div class="weekdays day">
+                        <p class="date">9 <p class="week_day">чт</p></p>
+                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
+                </td>
+                <td>
+                    <div class="weekdays day">
+                        <p class="date">10 <p class="week_day">пт</p></p>
+                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
+                </td>
+                <td>
+                    <div class="outputdays day">
+                        <p class="date">11 <p class="week_day">сб</p></p>
+                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
+                </td>
+                <td>
+                    <div class="outputdays day">
+                        <p class="date">12 <p class="week_day">вс</p></p>
+                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="weekdays day">
+                        <p class="date">13 <p class="week_day">пн</p></p>
+                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
+                </td>
+                <td>
+                    <div class="weekdays day">
+                        <p class="date">14 <p class="week_day">вт</p></p>
+                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
+                </td>
+                <td>
+                    <div class="weekdays day">
+                        <p class="date">15 <p class="week_day">ср</p></p>
+                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
+                </td>
+                <td>
+                    <div class="weekdays day">
+                        <p class="date">16 <p class="week_day">чт</p></p>
+                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day today">
-                        <p class="date">7</p>
+                        <p class="date">17 <p class="week_day">пт</p></p>
                     </div>
-                </td>
-                <td>
-                    <div class="weekdays day">
-                        <p class="date">8</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="weekdays day">
-                        <p class="date">9</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="weekdays day">
-                        <p class="date">10</p>
-                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="outputdays day">
-                        <p class="date">11</p>
+                        <p class="date">18 <p class="week_day">сб</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="outputdays day">
-                        <p class="date">12</p>
+                        <p class="date">19 <p class="week_day">вс</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
             </tr>
 
             <tr>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">13</p>
+                        <p class="date">20 <p class="week_day">пн</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">14</p>
+                        <p class="date">21 <p class="week_day">вт</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">15</p>
+                        <p class="date">22 <p class="week_day">ср</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">16</p>
+                        <p class="date">23 <p class="week_day">чт</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">17</p>
+                        <p class="date">24 <p class="week_day">пт</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="outputdays day">
-                        <p class="date">18</p>
+                        <p class="date">25 <p class="week_day">сб</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="outputdays day">
-                        <p class="date">19</p>
+                        <p class="date">26 <p class="week_day">вс</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
             </tr>
 
             <tr>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">20</p>
+                        <p class="date">27 <p class="week_day">пн</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">21</p>
+                        <p class="date">28 <p class="week_day">вт</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">22</p>
+                        <p class="date">29 <p class="week_day">ср</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">23</p>
+                        <p class="date">30 <p class="week_day">чт</p></p>
                     </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
                 <td>
                     <div class="weekdays day">
-                        <p class="date">24</p>
+                        <p class="date">31 <p class="week_day">пт</p></p>
                     </div>
-                </td>
-                <td>
-                    <div class="outputdays day">
-                        <p class="date">25</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="outputdays day">
-                        <p class="date">26</p>
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="weekdays day">
-                        <p class="date">27</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="weekdays day">
-                        <p class="date">28</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="weekdays day">
-                        <p class="date">29</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="weekdays day">
-                        <p class="date">30</p>
-                    </div>
-                </td>
-                <td>
-                    <div class="weekdays day">
-                        <p class="date">31</p>
-                    </div>
+                    <h2 class="text_title"></h2>
+                    <p class="text_note"></p>
                 </td>
             </tr>
         </table>
