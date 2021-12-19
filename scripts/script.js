@@ -1,5 +1,5 @@
 let modal = document.querySelector('.modal'),
-    day   = document.querySelectorAll('.month tr td');
+    dayTd   = document.querySelectorAll('.month tr td');
 
 
 // Данные в модалке
@@ -8,7 +8,7 @@ let btn        = document.querySelector('.btn'),
 
 
 // Название месяца и запись в modal
-let nameMonth     = document.querySelector('.name_month'),
+let nameMonth     = document.querySelectorAll('.name_month'),
     selectedMonth = document.querySelector('.selected_month');
 
 // Заголовок и запись в modal
@@ -30,28 +30,27 @@ let date         = document.querySelectorAll('.date'),
 let weekDay         = document.querySelectorAll('.week_day'),
     selectedWeekDay = document.querySelector('.selected_week_day');
 
+let dayBg = document.querySelectorAll('.day');
 
 // Костыль цикла
 let dayNumber;
 
 
-for(let i = 0; i < day.length; i++) {
-    day[i].addEventListener('click', () => {
-        // document.getElementsByTagName('body')[0].style = 'overflow: hidden !important;'
+
+for(let i = 0; i < dayTd.length; i++) {
+    dayTd[i].addEventListener('click', () => {
         // Модальное окно
         modal.classList.add('modal_active')
 
         modal.addEventListener('click', (el) => {
             if(el.target.classList.contains('modal')) {
                 modal.classList.remove('modal_active')
-                // document.getElementsByTagName('body')[0].style = 'overflow: scroll !important;'
             }
         })
 
         dayNumber = i
 
         // Инициализация данных в модальное окно
-        selectedMonth.innerText = nameMonth.innerText
         inputTitle.value = textTitle[i].innerText
         inputNote.value = textNote[i].innerText
         selectedDate.innerText = date[i].innerText
@@ -63,11 +62,32 @@ for(let i = 0; i < day.length; i++) {
             textTitle[dayNumber].innerHTML = inputTitle.value
             textNote[dayNumber].innerText = inputNote.value
             modal.classList.remove('modal_active')
-            // document.getElementsByTagName('body')[0].style = 'overflow: scroll !important;'
         })
 
         inputTitle.addEventListener('input', () => {
             modalTitle.innerText = inputTitle.value
         })
     })// day[i]
+
+    initDayBg()
 }
+
+
+function initDayBg() {
+    for(let i = 0; i < dayBg.length; i++){
+        if(weekDay[i].innerText === 'сб' || weekDay[i].innerText === 'вс') {
+            dayBg[i].classList.add('outputdays')
+        }
+        else{
+            dayBg[i].classList.add('weekdays')
+        }
+    }
+}
+
+
+
+
+
+
+
+

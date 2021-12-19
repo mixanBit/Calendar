@@ -34,6 +34,7 @@ a, button, input, textarea{
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 5;
     top: 0;
     left: 0;
     visibility: visible;
@@ -92,8 +93,16 @@ a, button, input, textarea{
     grid-gap: 8px;
     margin: auto;
     padding: 10px;
+    margin-top: 20px;
         @media(max-width: 1100px){
             width: 100%;
+        }
+        @media(max-width: 768px){
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            justify-content: center;
+            box-shadow: 0 15px 10px rgba(0,0,0,.3);
+            margin-top: 0;
         }
         button{
             cursor: pointer;
@@ -107,38 +116,56 @@ a, button, input, textarea{
                 &:nth-child(1){
                     background-image: url(../images/prew.png);
                 }
-                &:nth-child(3){
+                &:nth-child(4){
                     background-image: url(../images/next.png);
                 }
         }
 }
 
+.slider_name_month{
+    width: 184px;
+    overflow: hidden;
+}
+
+.slider_line_name_month{
+    display: flex;
+    grid-gap: 5px;
+    transition: all ease 1s;
+}
+
+.name_month{
+    width: inherit;
+    text-align: center;
+        @media(max-width: 375px){
+            font-size: 24px;
+        }
+}
+
 // -----------------(календарь)--------------------
 .calendar{
-    @include br;
-    width: 1000px;
+    max-width: 1050px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 5px;
-        @media(max-width: 1100px){
-            width: 100%;
-        }
+}
+
+.calendar_line{
+    display: -ms-flex;
+    display: flex;
+    background-color: white;
+    transition: all ease 1s;
 }
 
 .month{
     @include br;
+    width: inherit;
     display: flex;
+    justify-content: center;
     margin: auto;
-        @media(max-width: 1100px){
-            width: 100%;
-            justify-content: center;
-        }
-        @media(max-width: 900px){
-            width: 100%;
-        }
+    margin-top: 0;
+    margin-right: 10px;
         tr{
             display: flex;
             justify-content: center;
@@ -217,6 +244,20 @@ a, button, input, textarea{
     background-color:#6f081b;
 }
 
+@mixin day {
+    border-radius: 1px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    margin-top: 0;
+}
+
 .day{
     border-radius: 1px;
     width: 100%;
@@ -225,6 +266,7 @@ a, button, input, textarea{
     align-items: center;
     justify-content: flex-start;
     color: white;
+    transition: .3s linear;
     padding-left: 10px;
     padding-right: 10px;
     margin: auto;
@@ -264,6 +306,7 @@ a, button, input, textarea{
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 5;
     top: 0;
     left: 0;
     visibility: hidden;
@@ -308,7 +351,8 @@ a, button, input, textarea{
                     margin: auto;
                     margin-top: 15px;
                 }
-                .day{
+                .modal_top_information{
+                    @include day;
                     height: 50px;
                     background-color: #1a73e8;
                     padding-left: 15px;

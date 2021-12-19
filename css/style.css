@@ -38,6 +38,7 @@ a, button, input, textarea {
       -ms-flex-align: center;
           align-items: center;
   position: fixed;
+  z-index: 5;
   top: 0;
   left: 0;
   visibility: visible;
@@ -105,10 +106,23 @@ a, button, input, textarea {
   grid-gap: 8px;
   margin: auto;
   padding: 10px;
+  margin-top: 20px;
 }
 @media (max-width: 1100px) {
   .heading {
     width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .heading {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 0;
   }
 }
 .heading button {
@@ -124,49 +138,66 @@ a, button, input, textarea {
 .heading button:nth-child(1) {
   background-image: url(../images/prew.png);
 }
-.heading button:nth-child(3) {
+.heading button:nth-child(4) {
   background-image: url(../images/next.png);
 }
 
+.slider_name_month {
+  width: 184px;
+  overflow: hidden;
+}
+
+.slider_line_name_month {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 5px;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+}
+
+.name_month {
+  width: inherit;
+  text-align: center;
+}
+@media (max-width: 375px) {
+  .name_month {
+    font-size: 24px;
+  }
+}
+
 .calendar {
-  width: 1000px;
+  max-width: 1050px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.calendar_line {
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+}
+
+.month {
+  width: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: auto;
-  margin-top: 10px;
-  padding: 5px;
-}
-@media (max-width: 1100px) {
-  .calendar {
-    width: 100%;
-  }
-}
-
-.month {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-}
-@media (max-width: 1100px) {
-  .month {
-    width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
-@media (max-width: 900px) {
-  .month {
-    width: 100%;
-  }
+  margin-top: 0;
+  margin-right: 10px;
 }
 .month tr {
   display: -webkit-box;
@@ -304,6 +335,8 @@ a, button, input, textarea {
       -ms-flex-pack: start;
           justify-content: flex-start;
   color: white;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
   padding-left: 10px;
   padding-right: 10px;
   margin: auto;
@@ -361,6 +394,7 @@ a, button, input, textarea {
       -ms-flex-align: center;
           align-items: center;
   position: fixed;
+  z-index: 5;
   top: 0;
   left: 0;
   visibility: hidden;
@@ -421,17 +455,34 @@ a, button, input, textarea {
     margin-top: 15px;
   }
 }
-.modal_left .modal_day .day {
+.modal_left .modal_day .modal_top_information {
+  border-radius: 1px;
+  width: 100%;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  margin-top: 0;
   height: 50px;
   background-color: #1a73e8;
   padding-left: 15px;
   padding-right: 15px;
 }
-.modal_left .modal_day .day .selected_date {
+.modal_left .modal_day .modal_top_information .selected_date {
   color: white;
   font-size: 24px;
 }
-.modal_left .modal_day .day .selected_week_day {
+.modal_left .modal_day .modal_top_information .selected_week_day {
   font-size: 24px;
   margin: auto;
   margin-right: 0;
