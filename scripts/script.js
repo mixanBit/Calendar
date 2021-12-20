@@ -1,6 +1,6 @@
 let modal = document.querySelector('.modal'),
     dayTd   = document.querySelectorAll('.month tr td');
-
+    closeModal = document.querySelector('.close_modal')
 
 // Данные в модалке
 let btn        = document.querySelector('.btn'), 
@@ -35,7 +35,12 @@ let dayBg = document.querySelectorAll('.day');
 // Костыль цикла
 let dayNumber;
 
+// Кнопки удаления
+let btnResetTitle  = document.querySelector('.btn_reset_title'),
+    btnResetNote   = document.querySelector('.btn_reset_note'),
+    btnDeleteModal = document.querySelector('.btn_delete_modal');
 
+let modalTopInformation = document.querySelector('.modal_top_information');
 
 for(let i = 0; i < dayTd.length; i++) {
     dayTd[i].addEventListener('click', () => {
@@ -48,7 +53,13 @@ for(let i = 0; i < dayTd.length; i++) {
             }
         })
 
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('modal_active')
+        })
+
         dayNumber = i
+
+        
 
         // Инициализация данных в модальное окно
         inputTitle.value = textTitle[i].innerText
@@ -56,6 +67,8 @@ for(let i = 0; i < dayTd.length; i++) {
         selectedDate.innerText = date[i].innerText
         selectedWeekDay.innerText = weekDay[i].innerText
         modalTitle.innerText = inputTitle.value
+        deleteModalBg()
+        initModalBg()
 
         // Запись текста
         btn.addEventListener('click', () => {
@@ -67,8 +80,29 @@ for(let i = 0; i < dayTd.length; i++) {
         inputTitle.addEventListener('input', () => {
             modalTitle.innerText = inputTitle.value
         })
-    })// day[i]
 
+        // Удаление текста
+        btnResetTitle.addEventListener('click', () => {
+            inputTitle.value = ''
+            modalTitle.innerText = inputTitle.value
+        })
+
+        btnResetNote.addEventListener('click', () => {
+            inputNote.value = ''
+            textNote[dayNumber].innerText = inputNote.value
+        })
+
+        btnDeleteModal.addEventListener('click', () => {
+            inputTitle.value = ''
+            modalTitle.innerText = inputTitle.value
+            textTitle[dayNumber].innerHTML = inputTitle.value
+
+            inputNote.value = ''
+            textNote[dayNumber].innerText = inputNote.value
+
+            modal.classList.remove('modal_active')
+        })
+    })// day[i]
     initDayBg()
 }
 
@@ -86,7 +120,23 @@ function initDayBg() {
 
 
 
+function initModalBg() {
+    if(dayBg[dayNumber].classList.contains('outputdays')){
+        modalTopInformation.classList.add('outputdays')
+    }
+    else if(dayBg[dayNumber].classList.contains('today')){
+        modalTopInformation.classList.add('today')
+    }
+    else if(dayBg[dayNumber].classList.contains('weekdays')){
+        modalTopInformation.classList.add('weekdays')
+    } 
+}
 
+function deleteModalBg() {
+    modalTopInformation.classList.remove('outputdays')
+    modalTopInformation.classList.remove('weekdays')
+    modalTopInformation.classList.remove('today')
+}
 
 
 

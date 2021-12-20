@@ -143,6 +143,7 @@ a, button, input, textarea {
 }
 
 .slider_name_month {
+  border-radius: 50px;
   width: 184px;
   overflow: hidden;
 }
@@ -151,7 +152,6 @@ a, button, input, textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  grid-gap: 5px;
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
 }
@@ -290,7 +290,7 @@ a, button, input, textarea {
 @media (max-width: 425px) {
   .month td {
     width: 280px;
-    height: 260px;
+    height: 200px;
   }
 }
 .month td:hover {
@@ -314,11 +314,11 @@ a, button, input, textarea {
 }
 
 .weekdays {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
 .outputdays {
-  background-color: #6f081b;
+  background-color: #6f081b !important;
 }
 
 .day {
@@ -344,7 +344,7 @@ a, button, input, textarea {
 }
 @media (max-width: 425px) {
   .day {
-    height: 70px;
+    height: 50px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -376,7 +376,7 @@ a, button, input, textarea {
 }
 
 .today {
-  background-color: #1a73e8;
+  background-color: #1a73e8 !important;
   -webkit-box-shadow: 0 0 5px 4px #1a73e8 !important;
           box-shadow: 0 0 5px 4px #1a73e8 !important;
 }
@@ -407,6 +407,7 @@ a, button, input, textarea {
   border-radius: 8px;
   width: 700px;
   min-height: 400px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -426,6 +427,17 @@ a, button, input, textarea {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+}
+.modal .modal_overlay .close_modal {
+  width: 30px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+@media (min-width: 769px) {
+  .modal .modal_overlay .close_modal {
+    display: none;
   }
 }
 
@@ -453,6 +465,11 @@ a, button, input, textarea {
   .modal_left .modal_day {
     margin: auto;
     margin-top: 15px;
+  }
+}
+@media (max-width: 425px) {
+  .modal_left .modal_day {
+    height: 150px;
   }
 }
 .modal_left .modal_day .modal_top_information {
@@ -507,7 +524,7 @@ a, button, input, textarea {
 }
 @media (max-width: 768px) {
   .modal_form {
-    margin-top: 10px;
+    margin-top: 20px;
   }
 }
 .modal_form .block_input {
@@ -522,11 +539,6 @@ a, button, input, textarea {
 .modal_form .block_input:nth-child(2) {
   margin-top: 15px;
 }
-.modal_form .block_input label {
-  font-size: 22px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-}
 .modal_form .block_input input, .modal_form .block_input textarea {
   border: 0.5px solid #C6C6C8;
   border-radius: 8px;
@@ -540,7 +552,45 @@ a, button, input, textarea {
   min-height: 190px;
   max-height: 190px;
 }
-.modal_form button {
+
+.menu_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.menu_input label {
+  font-size: 22px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin: auto;
+  margin-left: 0;
+}
+.menu_input img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.menu_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 15px;
+  margin: auto;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+.menu_button img {
+  cursor: pointer;
+  width: 30px;
+}
+.menu_button button {
   border: 0.5px solid #C6C6C8;
   border-radius: 6.93px;
   cursor: pointer;
@@ -552,22 +602,47 @@ a, button, input, textarea {
   background: white;
   -webkit-transition: 0.15s linear;
   transition: 0.15s linear;
-  margin: auto;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-top: 15px;
 }
-.modal_form button:hover {
+.menu_button button:hover {
   color: white;
   -webkit-box-shadow: inset 140px 0 0 0 #1a73e8;
           box-shadow: inset 140px 0 0 0 #1a73e8;
 }
-.modal_form button:focus {
+.menu_button button:focus {
   color: white;
   -webkit-box-shadow: inset 140px 0 0 0 #1a73e8;
           box-shadow: inset 140px 0 0 0 #1a73e8;
 }
 
+.reset {
+  cursor: pointer;
+}
+.reset:hover {
+  -webkit-animation: anim_reset 2s infinite;
+          animation: anim_reset 2s infinite;
+}
+
+@-webkit-keyframes anim_reset {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+
+@keyframes anim_reset {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
 .modal_active {
   visibility: visible !important;
   opacity: 1 !important;

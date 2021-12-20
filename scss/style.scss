@@ -123,13 +123,14 @@ a, button, input, textarea{
 }
 
 .slider_name_month{
+    border-radius: 50px;
     width: 184px;
     overflow: hidden;
 }
 
 .slider_line_name_month{
     display: flex;
-    grid-gap: 5px;
+    // grid-gap: 5px;
     transition: all ease 1s;
 }
 
@@ -217,7 +218,7 @@ a, button, input, textarea{
                 }
                 @media(max-width: 425px){
                     width: 280px;
-                    height: 260px;
+                    height: 200px;
                 }
                 &:hover{
                     background-color: rgba(0,0,0,.1);
@@ -237,11 +238,11 @@ a, button, input, textarea{
 }
 
 .weekdays{
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0,0,0,.3) !important;
 }
 
 .outputdays{
-    background-color:#6f081b;
+    background-color:#6f081b !important;
 }
 
 @mixin day {
@@ -272,7 +273,7 @@ a, button, input, textarea{
     margin: auto;
     margin-top: 0;
         @media(max-width: 425px){
-            height: 70px;
+            height: 50px;
             padding-left: 20px;
             padding-right: 20px;
         }
@@ -294,7 +295,7 @@ a, button, input, textarea{
 }
 
 .today{
-    background-color: #1a73e8;
+    background-color: #1a73e8 !important;
     box-shadow: 0 0 5px 4px #1a73e8!important;
 }
 
@@ -317,6 +318,7 @@ a, button, input, textarea{
             border-radius: 8px;
             width: 700px;
             min-height: 400px;
+            position: relative;
             display: flex;
             background-color: white;
             padding: 15px; 
@@ -327,7 +329,16 @@ a, button, input, textarea{
                     width: 90%;
                     height: 90vh;
                     flex-direction: column;
-                }   
+                }  
+                .close_modal{
+                    width: 30px;
+                    position: absolute;
+                    top: 12px;
+                    right: 12px;
+                        @media(min-width: 769px){
+                            display: none;
+                        }
+                }
         }
 }
 
@@ -350,6 +361,9 @@ a, button, input, textarea{
                 @media(max-width: 768px){
                     margin: auto;
                     margin-top: 15px;
+                }
+                @media(max-width: 425px){
+                    height: 150px;
                 }
                 .modal_top_information{
                     @include day;
@@ -383,7 +397,7 @@ a, button, input, textarea{
     margin-right: 0;
     margin-top: 0;
         @media(max-width: 768px){
-            margin-top: 10px;
+            margin-top: 20px;
         }
         .block_input{
             display: flex;
@@ -391,11 +405,7 @@ a, button, input, textarea{
                 &:nth-child(2){
                     margin-top: 15px;
                 }
-                label{
-                    font-size: 22px;
-                    padding-bottom: 5px;
-                    padding-left: 10px;
-                }
+                
                 input, textarea{
                     border: 0.5px solid #C6C6C8;
                     border-radius: 8px;
@@ -411,6 +421,37 @@ a, button, input, textarea{
                     max-height: 190px;
                 }
         }
+        
+}
+
+.menu_input{
+    display: flex;
+    align-items: flex-start;
+        label{
+            font-size: 22px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            margin: auto;
+            margin-left: 0;
+        }
+        img{
+            width: 24px;
+            margin-right: 10px;
+        }
+}
+
+.menu_button{
+    display: flex;
+    align-items: center;
+    grid-gap: 15px;
+    margin: auto;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 15px;
+        img{
+            cursor: pointer;
+            width: 30px;
+        }
         button{
             border: 0.5px solid #C6C6C8;
             border-radius: 6.93px;
@@ -422,10 +463,6 @@ a, button, input, textarea{
             color: black;
             background: white;
             transition: .15s linear;
-            margin: auto;
-            margin-right: 0;
-            margin-bottom: 0;
-            margin-top: 15px;
                 &:hover{
                     color: white;
                     box-shadow: inset 140px 0 0 0 #1a73e8;
@@ -435,6 +472,22 @@ a, button, input, textarea{
                     box-shadow: inset 140px 0 0 0 #1a73e8;
                 }
         }
+}
+
+.reset{
+    cursor: pointer;
+        &:hover{
+            animation: anim_reset 2s infinite;
+        }
+}
+
+@keyframes anim_reset {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(720deg);
+    }
 }
 
 .modal_active{
