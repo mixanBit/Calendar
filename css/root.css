@@ -1,0 +1,8 @@
+:root {
+  --bgBody: white;
+  --bgWeekdays: rgba(0,0,0,.3);
+  --bgOutputdays: #6f081b;
+  --bgToday: #1a73e8;
+  --colorDay: white;
+  --bgSidebar: white;
+}

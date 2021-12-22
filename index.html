@@ -13,24 +13,87 @@
     <link rel="icon" sizes="100x100" href="images/calendar.ico" />
 
     <!-- style -->
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/preload.css">
+    <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/style.css">
 
+
     <!-- scripts -->
-    <script src="scripts/preload.js" defer></script>
+    <!-- <script src="scripts/preload.js" defer></script> -->
+    <script src="scripts/sidebar.js" defer></script>
+    <script src="scripts/color-change.js" defer></script>
     <script src="scripts/script.js" defer></script>
     <script src="scripts/slider.js" defer></script>
 </head>
 <body>
 
-<div class="preload">
+<!-- --------------------------(Экран загрузки)---------------------------- -->
+<!-- <div class="preload">
     <div class="preload_container">
         <h1>Manchenko</h1>
         <hr>
         <h1>Calendar</h1>
         <div class="anim_block"></div>
     </div>
-</div>
+</div> -->
 
+<!-- --------------------------(меню)---------------------------- -->
+<div class="sidebar">
+    <div class="sidebar_overlay">
+        <div class="container_color">
+            <h2>Cтраница</h2>
+            <div class="box_color">
+                <input placeholder="Введите цвет" class="color_body" type="text">
+                <div class="input_box bg_body"></div>
+            </div>
+        </div>
+
+        <div class="container_color">
+            <h2>Текст дней</h2>
+            <div class="box_color">
+                <input placeholder="Введите цвет" class="color_day" type="text">
+                <div class="input_box bg_day"></div>
+            </div>
+        </div>
+
+        <div class="container_color">
+            <h2>Сегодня</h2>
+            <div class="box_color">
+                <input placeholder="Введите цвет" class="color_today" type="text">
+                <div class="input_box bg_today"></div>
+            </div>
+        </div>
+
+        <div class="container_color">
+            <h2>Будни</h2>
+            <div class="box_color">
+                <input placeholder="Введите цвет" class="color_weekdays" type="text">
+                <div class="input_box bg_weekdays"></div>
+            </div>
+        </div>
+
+        <div class="container_color">
+            <h2>Выходные</h2>
+            <div class="box_color">
+                <input placeholder="Введите цвет" class="color_outputdays" type="text">
+                <div class="input_box bg_outputdays"></div>
+            </div>
+        </div>
+
+        <div class="container_color">
+            <h2>Боковая панель</h2>
+            <div class="box_color">
+                <input placeholder="Введите цвет" class="color_sidebar" type="text">
+                <div class="input_box bg_sidebar"></div>
+            </div>
+        </div>
+    </div>  
+
+    <button class="btn_sidebar">
+        <img class="btn_sidebar_img" src="images/setting.png" alt="">
+    </button>
+</div>
 
 <!-- --------------------------(месяц)---------------------------- -->
     <div class="heading">
