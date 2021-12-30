@@ -99,6 +99,9 @@ for(let i = 0; i < dayTd.length; i++) {
             inputNote.value = ''
             textNote[dayNumber].innerText = inputNote.value
 
+            localStorage.removeItem(`title${dayNumber}`)
+            localStorage.removeItem(`note${dayNumber}`)
+
             modal.classList.remove('modal_active')
         })
     })// day[i]
@@ -135,27 +138,46 @@ function deleteModalBg() {
 }
 
 let arrayTitle = {};
+let arrayNote= {};
 
 function recordLocalStorage() {
-    
+
     for(let i = 0; i < textTitle.length; i++){
-        localStorage.setItem(i, textTitle[i].innerText)
+        localStorage.setItem(`title${i}`, textTitle[i].innerText)
     }
-    // localStorage.clear();
+
+    for(let i = 0; i < textNote.length; i++){
+        localStorage.setItem(`note${i}`, textNote[i].innerText)
+    }
+
 }
 
-
+// Запись в объект и вывод в html
 function initLocalStorage() {
 
+    // Заголовоk
     for (let i = 0; i < textTitle.length; i++) {
-        let key = localStorage.key(i);
-        arrayTitle[key] = localStorage.getItem(key);
+        arrayTitle[`title${i}`] = localStorage.getItem(`title${i}`);
+    }
+    for(let i = 0; i < textTitle.length; i++){
+        textTitle[i].innerText = arrayTitle[`title${i}`];
     }
 
-    for(let i = 0; i < textTitle.length; i++){
-        textTitle[i].innerText = arrayTitle[i];
+    // Текст записи
+    for (let i = 0; i < textNote.length; i++) {
+        arrayNote[`note${i}`] = localStorage.getItem(`note${i}`);
+    }
+    for(let i = 0; i < textNote.length; i++){
+        textNote[i].innerText = arrayNote[`note${i}`];
     }
 }
 
-
 initLocalStorage()
+
+
+//  Сброс localStorage
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.keyCode == 116 ) {
+      localStorage.clear();
+    }
+});
