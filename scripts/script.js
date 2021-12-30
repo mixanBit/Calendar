@@ -59,8 +59,6 @@ for(let i = 0; i < dayTd.length; i++) {
 
         dayNumber = i
 
-        
-
         // Инициализация данных в модальное окно
         inputTitle.value = textTitle[i].innerText
         inputNote.value = textNote[i].innerText
@@ -74,6 +72,7 @@ for(let i = 0; i < dayTd.length; i++) {
         btn.addEventListener('click', () => {
             textTitle[dayNumber].innerHTML = inputTitle.value
             textNote[dayNumber].innerText = inputNote.value
+            recordLocalStorage()
             modal.classList.remove('modal_active')
         })
 
@@ -106,7 +105,6 @@ for(let i = 0; i < dayTd.length; i++) {
     initDayBg()
 }
 
-
 function initDayBg() {
     for(let i = 0; i < dayBg.length; i++){
         if(weekDay[i].innerText === 'сб' || weekDay[i].innerText === 'вс') {
@@ -117,8 +115,6 @@ function initDayBg() {
         }
     }
 }
-
-
 
 function initModalBg() {
     if(dayBg[dayNumber].classList.contains('outputdays')){
@@ -138,6 +134,28 @@ function deleteModalBg() {
     modalTopInformation.classList.remove('today')
 }
 
+let arrayTitle = {};
+
+function recordLocalStorage() {
+    
+    for(let i = 0; i < textTitle.length; i++){
+        localStorage.setItem(i, textTitle[i].innerText)
+    }
+    // localStorage.clear();
+}
 
 
+function initLocalStorage() {
 
+    for (let i = 0; i < textTitle.length; i++) {
+        let key = localStorage.key(i);
+        arrayTitle[key] = localStorage.getItem(key);
+    }
+
+    for(let i = 0; i < textTitle.length; i++){
+        textTitle[i].innerText = arrayTitle[i];
+    }
+}
+
+
+initLocalStorage()
